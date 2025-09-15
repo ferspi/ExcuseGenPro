@@ -1,0 +1,87 @@
+Crea una aplicación web llamada "Excuse Generator Pro" que genere excusas creíbles y creativas usando IA. La aplicación debe ser simple, funcional y visualmente atractiva para estudiantes universitarios.
+
+## FUNCIONALIDADES PRINCIPALES:
+
+### 1. GENERADOR DE EXCUSAS CONTEXTUAL
+- Formulario con campos:
+  * Situación específica (texto libre): "A qué evento/compromiso no puedes ir"
+  * Tipo de audiencia (dropdown): Profesor, Jefe, Padres, Pareja, Amigos
+  * Nivel de creatividad (slider 1-10): De "creíble y simple" a "súper creativo"
+  * Urgencia (radio buttons): Último minuto, Planificada con tiempo
+- Botón "Generar Excusas" que llama a la API de IA
+
+### 2. SISTEMA DE SCORING Y RANKING
+- Mostrar 3-5 excusas generadas en cards individuales
+- Cada excuse debe tener:
+  * El texto de la excuse
+  * Credibilidad Score (1-10 con estrellas o barra)
+  * Originalidad Score (1-10 con estrellas o barra) 
+  * Risk Level (badges: Bajo/Medio/Alto con colores verde/amarillo/rojo)
+- Ordenar excusas por score total (credibilidad + originalidad)
+
+### 3. BANCO DE EXCUSAS PERSONAL
+- Sección "Mis Excusas Guardadas" con tabla/lista
+- Cada entrada guardada debe mostrar:
+  * Texto de la excuse
+  * Para qué situación era
+  * Fecha cuando se guardó
+  * Botón "Marcar como usada"
+  * Botón "Eliminar"
+- Botón "Guardar Excuse" en cada excuse generada
+
+## ESPECIFICACIONES TÉCNICAS:
+
+### INTEGRACIÓN CON IA:
+- Campo obligatorio para API Key (OpenAI/Claude/Gemini)
+- Prompt interno para la IA debe incluir:
+  * Contexto de la situación
+  * Tipo de audiencia
+  * Nivel de creatividad solicitado
+  * Instrucciones para generar múltiples opciones con scoring
+  * Formato de respuesta estructurado (JSON preferiblemente)
+
+### ALMACENAMIENTO:
+- Usar localStorage para guardar:
+  * API Key del usuario
+  * Historial de excusas guardadas
+  * Preferencias del usuario
+- NO usar base de datos externa
+
+### UI/UX REQUIREMENTS:
+
+#### DISEÑO GENERAL:
+- Color scheme: Tonos oscuros/neon para look "sneaky" pero profesional
+- Typography: Moderna y legible
+- Layout: Single page application, responsive
+- Tema: Slightly playful pero no infantil
+
+#### ESTRUCTURA DE LA PÁGINA:
+1. **Header**: Logo + título "Excuse Generator Pro"
+2. **Input Section**: Formulario principal en la parte superior
+3. **Results Section**: Grid/lista de excusas generadas con sus scores
+4. **Saved Excuses Section**: Collapsible section en la parte inferior
+
+#### ELEMENTOS ESPECÍFICOS:
+- Formulario en un card/container destacado
+- Botones con hover effects y estados de loading
+- Excusas generadas en cards con bordes redondeados
+- Iconos para scoring (estrellas, medidores, badges)
+- Responsive design que funcione en móvil
+- Loading spinner cuando se generan excusas
+- Toast notifications para acciones (guardar, eliminar, etc.)
+
+## FLUJO DE USUARIO:
+1. Usuario ingresa API Key (se guarda para futuras sesiones)
+2. Completa formulario con situación y parámetros
+3. Hace click en "Generar Excusas"
+4. Ve las excusas rankeadas con sus scores
+5. Puede guardar las que le gusten
+6. Puede revisar/gestionar sus excusas guardadas
+
+## CARACTERÍSTICAS ADICIONALES SIMPLES:
+- Botón "Sorpréndeme" que llena el formulario con datos random
+- Tips de delivery que aparezcan junto a cada excuse
+- Contador de excusas generadas en la sesión
+- Validación de formulario básica
+
+La aplicación debe ser completamente funcional, con una UI limpia y moderna. Prioriza la usabilidad sobre funcionalidades complejas. Incluye comentarios en el código explicando las partes principales.
